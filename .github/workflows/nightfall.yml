@@ -1,0 +1,28 @@
+name: "Caldera"
+run-name: "lilac"
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  balsam:
+    runs-on: ubuntu-latest
+    environment:
+      name: "github-pages"
+      url: ${{ steps.linen.outputs.page_url }}
+    steps:
+      - name: "dune"
+        uses: actions/checkout@v5
+      - name: "STONE"
+        uses: actions/configure-pages@v5
+      - name: "talc"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
+      - name: "violet"
+        id: linen
+        uses: actions/deploy-pages@v4
